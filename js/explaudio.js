@@ -172,11 +172,6 @@ function imageFromUpload(canvasEnv, filepath) {
 	return dfd.promise();
 }
 
-// Returns [0]->r [1]->g [2]->b
-function getPixel(context, x, y) {
-	return context.getImageData(x, y, 1, 1).data;
-}
-
 
 function getPixelColumn(canvasEnv, x) {
 	var column = canvasEnv.context.getImageData(x, 0, 1, canvasEnv.canvas.height).data;
@@ -273,29 +268,6 @@ function setupAudioContext() {
 }
 
 
-
-// createOscillator(audioContext, 1, 400);
-// 
-//Sine wave is type = “sine”
-//Square wave is type = “square”
-//Sawtooth wave is type = “saw”
-//Triangle wave is type = “triangle”
-//Custom wave is type = “custom”
-function createOscillator(audioContext, waveType, frequency, connectTo) {
-	var oscillator = audioContext.createOscillator();
-	oscillator.type = waveType; // Tell the oscillator to use a square wave
-	oscillator.frequency.value = frequency; // in hertz
-	
-	OSCILLATORS.push(oscillator);
-
-	return oscillator;
-}
-
-
-function connectOscillator(from, to) {
-	from.connect(to);
-}
-
 function playSound() {
 	var audio = new Audio(); // create the HTML5 audio element
 	var riffwave = new RIFFWAVE(); // create an empty wave file
@@ -304,19 +276,9 @@ function playSound() {
 	riffwave.Make(AUDIO_BITS); // make the wave file
 	audio.src = riffwave.dataURI; // set audio source
 	audio.play(); // we should hear two tones one on each speaker	
-	
-/*
-	for(var i = 0; i < OSCILLATORS.length; i ++) {
-		var oscillator = OSCILLATORS[i];
-		oscillator.start(0); // Start generating sound immediately
-	}
-	*/
 }
 
 
 function stopSound() {
-	for(var i = 0; i < OSCILLATORS.length; i ++) {
-		var oscillator = OSCILLATORS[i];
-		oscillator.stop(0); // Stop generating sound immediately
-	}
+	// There's NO STOPPING THE SOUND ;)
 }
