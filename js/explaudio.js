@@ -1,4 +1,4 @@
-var ScAMPLE_RATE = 44100;
+var SAMPLE_RATE = 44100;
 var AUDIO_BITS = new Array();
 var OSCILLATORS = new Array();
 
