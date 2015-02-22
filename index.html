@@ -1,0 +1,49 @@
+<html>
+	<head>
+		<link href="style/default.css" rel="stylesheet" type="text/css">
+	</head>
+	<body>
+		<div class="full">
+			<h1>Explaudio Prototype</h1>
+			
+			<p>By Ashleigh (<a href="https://twitter.com/qualitygoon" target="_blank">@QualityGoon</a>)
+				and James (<a href="https://twitter.com/jtruk" target="_blank">@jtruk</a>)
+			</p>
+			
+			<p>Built during FutureEverything Lean Startup Weekend</p>
+		</div>
+		<div class="half">
+			<h2>Upload / Take Picture</h2>
+			<input type="file" name="fileToUpload">
+			<button id="btn_upload">Upload</button>
+		</div>
+		<div class="half">
+			<h2>Use Sample</h2>
+			<select name="image">
+				<option value="samples/Jellyfish.jpg">Jellyfish</option>
+				<option value="samples/Chrysanthemum.jpg">Chrysanthemum</option>
+				<option value="samples/Desert.jpg">Desert</option>
+				<option value="samples/Hydrangeas.jpg">Hydrangeas</option>
+				<option value="samples/Koala.jpg">Koala</option>
+				<option value="samples/Lighthouse.jpg">Lighthouse</option>
+				<option value="samples/Penguins.jpg">Penguins</option>
+				<option value="samples/Tulips.jpg">Tulips</option>
+				<option value="samples/townhall.jpg">Town Hall</option>
+			</select>
+			<button id="btn_load_sample">Load</button>
+		</div>
+
+		<div class="full">
+			<canvas id="viewport"></canvas>
+		</div>
+	
+		<div class="full">
+			<button id="btn_play">Play</button>
+			<button id="btn_stop">Stop</button>
+		</div>
+	
+		<script type="text/javascript" src="js/jquery-1.11.2.min.js"></script>
+		<script type="text/javascript" src="js/riffwave.js"></script>
+		<script type="text/javascript" src="js/explaudio.js"></script>
+	</body>
+</html>
